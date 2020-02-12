@@ -10,11 +10,12 @@ inputElement.addEventListener('change', function (e) {
     Number(inputYear);
 });
 
-button.addEventListener('click', function () {
+button.addEventListener('click', function myFunc() {
     let result = currentYear - inputYear - 1;
     if (inputYear == "") {
         alert('Insert your age.')
     } else {
         mainSection.insertAdjacentHTML('beforeend', `<p class ="new">Year of your birth: ${result}</p>`)
     }
+    this.removeEventListener('click', myFunc);
 });
